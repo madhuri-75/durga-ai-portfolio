@@ -1,7 +1,25 @@
 
+/**
+ * Skills.tsx
+ * 
+ * The Skills component displays Madhuri's technical skills organized by categories.
+ * Each category is presented in a card format with a list of related skills.
+ * The component uses a responsive grid layout for different screen sizes.
+ * 
+ * @author Madhuri Sri Durga Visali Perumalla
+ */
+
 import React from 'react';
 
+/**
+ * Skills component showcasing technical abilities by category
+ * @returns {JSX.Element} The rendered Skills section
+ */
 const Skills = () => {
+  /**
+   * Array of skill categories with their related skills
+   * Each category contains a title and an array of skill names
+   */
   const skillCategories = [
     {
       title: "Programming Languages",
@@ -24,6 +42,7 @@ const Skills = () => {
           Skills & Expertise
         </h2>
         
+        {/* Responsive grid layout for skill categories */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
           {skillCategories.map((category, index) => (
             <div 
@@ -34,6 +53,7 @@ const Skills = () => {
                 {category.title}
               </h3>
               
+              {/* Skills list with triangle bullet points */}
               <ul className="space-y-3">
                 {category.skills.map((skill, skillIndex) => (
                   <li 

@@ -1,6 +1,20 @@
 
+/**
+ * About.tsx
+ * 
+ * The About component displays professional and personal information about Madhuri.
+ * It includes a detailed bio, educational background, and a dedicated education card
+ * with key details about her degree program.
+ * 
+ * @author Madhuri Sri Durga Visali Perumalla
+ */
+
 import React from 'react';
 
+/**
+ * About component containing bio and education information
+ * @returns {JSX.Element} The rendered About section
+ */
 const About = () => {
   return (
     <section id="about" className="py-24">
@@ -10,6 +24,7 @@ const About = () => {
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+          {/* Bio and personal information */}
           <div className="md:col-span-2 space-y-4">
             <p>
               Hello! I'm Madhuri, a Computer Science and Engineering student specializing in AI and Data Science at 
@@ -32,6 +47,7 @@ const About = () => {
             </p>
           </div>
           
+          {/* Education card */}
           <div className="relative group">
             <div className="rounded-md overflow-hidden bg-navy p-6 border border-lightblue/30 hover:border-lightblue transition-all duration-300">
               <div className="text-center mb-4">

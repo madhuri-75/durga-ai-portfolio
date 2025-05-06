@@ -1,11 +1,35 @@
 
+/**
+ * Navbar.tsx
+ * 
+ * The Navbar component provides navigation for the portfolio website.
+ * It includes responsive behavior with a mobile menu and scroll effects.
+ * The navbar changes appearance when scrolling down the page.
+ * 
+ * @author Madhuri Sri Durga Visali Perumalla
+ */
+
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 
+/**
+ * Navbar component with responsive behavior and scroll effects
+ * @returns {JSX.Element} The rendered Navbar
+ */
 const Navbar = () => {
+  /**
+   * State to track if user has scrolled down
+   */
   const [isScrolled, setIsScrolled] = useState(false);
+  
+  /**
+   * State to control mobile menu visibility
+   */
   const [menuOpen, setMenuOpen] = useState(false);
 
+  /**
+   * Effect to handle scroll behavior and update navbar appearance
+   */
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -14,6 +38,9 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  /**
+   * Navigation links configuration
+   */
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
@@ -30,14 +57,16 @@ const Navbar = () => {
       )}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
+        {/* Logo/brand link */}
         <a href="#home" className="text-lightblue text-xl font-bold">
           Madhuri.dev
         </a>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button - shown only on small screens */}
         <button
           className="lg:hidden text-lightslate hover:text-lightblue"
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle mobile menu"
         >
           {menuOpen ? (
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -53,7 +82,7 @@ const Navbar = () => {
           )}
         </button>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation - hidden on small screens */}
         <nav className="hidden lg:flex items-center space-x-8">
           {navLinks.map((link, index) => (
             <a
@@ -71,7 +100,7 @@ const Navbar = () => {
         </nav>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - shown only when menuOpen is true */}
       {menuOpen && (
         <nav className="lg:hidden bg-navy py-6 px-4 mt-4 rounded-md shadow-lg">
           <ul className="flex flex-col space-y-4">

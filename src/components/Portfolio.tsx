@@ -1,6 +1,20 @@
 
+/**
+ * Portfolio.tsx
+ * 
+ * The Portfolio component showcases Madhuri's projects.
+ * It currently displays a featured project (Guidance Chat Bot for College)
+ * with description, technologies used, and a visual representation.
+ * 
+ * @author Madhuri Sri Durga Visali Perumalla
+ */
+
 import React from 'react';
 
+/**
+ * Portfolio component to display projects and work examples
+ * @returns {JSX.Element} The rendered Portfolio section
+ */
 const Portfolio = () => {
   return (
     <section id="portfolio" className="bg-navy/30 py-24">
@@ -10,8 +24,10 @@ const Portfolio = () => {
         </h2>
         
         <div className="mt-12">
+          {/* Featured project card with hover effect */}
           <div className="bg-navy border border-lightblue/20 rounded-lg overflow-hidden hover:border-lightblue/50 transition-all duration-300 transform hover:-translate-y-2">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Project description column */}
               <div className="p-8 flex flex-col justify-center">
                 <p className="text-lightblue mb-2">Featured Project</p>
                 <h3 className="text-2xl font-bold text-white mb-4">Guidance Chat Bot for College</h3>
@@ -21,6 +37,7 @@ const Portfolio = () => {
                     The bot provides guidance on course selection, academic schedules, and general campus information.
                   </p>
                 </div>
+                {/* Technologies used tags */}
                 <div className="flex flex-wrap gap-3">
                   <span className="text-sm text-lightslate bg-navy px-3 py-1 rounded-full border border-lightblue/20">
                     Python
@@ -37,6 +54,7 @@ const Portfolio = () => {
                 </div>
               </div>
               
+              {/* Project visual representation column */}
               <div className="bg-lightblue/5 flex items-center justify-center p-6">
                 <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-lightblue/20">
                   <div className="absolute inset-0 flex flex-col items-center justify-center bg-darkblue/80 text-center p-6">

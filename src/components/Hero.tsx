@@ -1,11 +1,26 @@
 
+/**
+ * Hero.tsx
+ * 
+ * The Hero component represents the main landing section of the portfolio website.
+ * It displays a professional introduction, profile image, and call-to-action buttons.
+ * The component uses animation effects for a more engaging user experience.
+ * 
+ * @author Madhuri Sri Durga Visali Perumalla
+ */
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 
+/**
+ * Hero component for the landing section of the portfolio
+ * @returns {JSX.Element} The rendered Hero section
+ */
 const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center pt-20">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+        {/* Text content column */}
         <div className="lg:col-span-3 space-y-5">
           <p className="text-lightblue opacity-0 animate-fade-in">Hi, my name is</p>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white opacity-0 animate-fade-in animate-delay-1">
@@ -18,6 +33,7 @@ const Hero = () => {
             I'm an aspiring Full-Stack and AI Developer with a passion for creating modern web applications. 
             Combining technical expertise and creative problem-solving to deliver solutions that meet user needs and business goals.
           </p>
+          {/* Call-to-action buttons */}
           <div className="pt-5 opacity-0 animate-fade-in animate-delay-4">
             <a href="#portfolio" className="btn btn-primary mr-4">
               Explore My Work
@@ -27,6 +43,8 @@ const Hero = () => {
             </a>
           </div>
         </div>
+        
+        {/* Profile image column with border effect */}
         <div className="lg:col-span-2 opacity-0 animate-fade-in animate-delay-5">
           <div className="relative">
             <div className="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden border-2 border-lightblue">
@@ -36,6 +54,7 @@ const Hero = () => {
                 className="w-full h-full object-cover"
               />
             </div>
+            {/* Background effect element */}
             <div className="absolute inset-0 rounded-full bg-lightblue/20 transform -translate-x-2 -translate-y-2 -z-10"></div>
           </div>
         </div>
